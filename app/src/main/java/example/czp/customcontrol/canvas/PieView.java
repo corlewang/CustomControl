@@ -76,9 +76,9 @@ public class PieView extends View {
     /**
      * 弧形的起始角度
      */
-    private int startAngle;
+    private float startAngle;
 
-    private int[] angles = new int[mCount];
+    private float[] angles = new float[mCount];
 
     private float mTextSize = TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SHIFT, 48, getResources().getDisplayMetrics());
     private RectF sectorRectF;
@@ -86,7 +86,7 @@ public class PieView extends View {
     /**
      * 弧形划过的角度
      */
-    private int sweepAngle;
+    private float sweepAngle;
     /**
      * 下标
      */
@@ -178,8 +178,8 @@ public class PieView extends View {
         canvas.drawCircle(mCenter, mCenter, mCenter - getPaddingLeft() / 2, mBgPaint);
         //2.绘制扇形
         //2.1设置每一个扇形的角度
-        sweepAngle = 360 / mCount;
-        startAngle = 0;
+        sweepAngle = 360f / mCount;
+        startAngle = 0f;
         //2.2设置扇形绘制的范围
         sectorRectF = new RectF(getPaddingLeft(), getPaddingLeft(),
                 mCenter * 2 - getPaddingLeft(), mCenter * 2 - getPaddingLeft());
